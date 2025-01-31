@@ -3,7 +3,9 @@ Postman is an API(application programming interface) development tool that helps
 
 [Basics](README.md#basics)
 
-[POSTMAN introduction](POSTMAN-Introduction)
+[POSTMAN introduction](README.md#postman-introduction)
+
+
 
 ## Basics:
 API -> Interface -> Communicate
@@ -50,5 +52,84 @@ Features: REST is simple and intuitive, and follows HTTP standards. XML and JSON
 Use: GraphQL is a good choice for modern applications that require flexible data queries and reduced data transfer. 
 Features: GraphQL is a query language that allows you to specify exactly what data you need. 
 
-## HTTP Methods
-### GET 
+### Collection:
+a collection is a group of saved API requests that can be organized into folders. Collections are a useful tool for organizing, testing, and sharing API requests. 
+
+### HTTP Methods
+#### GET:
+Retrieves data from a server using a URI. For example, you can use GET to retrieve a list of tasks from a to-do list API. 
+#### POST: 
+Sends data to a server, such as customer information or a file upload. For example, you can use POST to add a new product to an e-commerce store database. 
+
+#### Other request methods 
+PUT: Replaces existing data with updated data
+PATCH: Updates specific fields of existing data
+DELETE: Removes existing data from a database
+HEAD: Similar to GET, but without the response body
+OPTIONS: Describes the communication options for a resource
+Using Postman 
+
+#### Use the Postman API client to create and send API requests
+Select the method dropdown list
+Edit the method name text
+Save your new method
+Select Send to test the endpoint
+
+## Send your first API request
+Send an API request
+Make sure you've downloaded and installed the Postman desktop app. When you're ready, open the Postman desktop app and send your first API request.
+1. Select + in the workbench to open a new tab.
+2. Enter postman-echo.com/get for the request URL.
+3. Select Send.
+Postman displays the response data sent from the server in the lower pane.
+![image](https://github.com/user-attachments/assets/3fc2f054-1886-4f91-8228-fe9c49cede43)
+
+## Variables
+1. Global Variables:
+These are available throughout Postman across all collections and environments.
+They can be set and accessed via the "Globals" tab.
+Useful for data you need across multiple collections.
+
+2. Environment Variables:
+These are tied to a specific environment.
+You can define and use them in an environment-specific manner.
+Common for things like API keys, URLs, etc.
+
+3. Collection Variables:
+Specific to a collection, they can be used for all requests within the collection.
+Useful for grouping variables that only apply within a particular collection.
+
+4.Local Variables:
+These are temporary variables used only within a single request.
+Typically defined in pre-request scripts or test scripts and only live for the duration of that request.
+
+### Analyzing a response
+In Postman, analyzing a response involves reviewing various aspects of the response received after making an API request. Here's how you can analyze it:
+
+Status Code:
+Located at the top of the response pane (e.g., 200 OK, 404 Not Found).
+Indicates whether the request was successful or not.
+
+Response Body:
+This is the actual content returned by the API.
+Can be in different formats like JSON, XML, HTML, etc.
+You can view it in different views: Raw, Preview, or Pretty (formatted for readability).
+
+1. Headers:
+Shows metadata about the response, such as content type, authorization, and cache-control.
+You can inspect these to verify information like content encoding or API version.
+
+2. Time:
+Displays the response time (in milliseconds) to understand how fast the server responded.
+
+3. Size:
+Shows the size of the response payload, useful for performance testing.
+
+4. Cookies:
+Lists any cookies returned in the response, which are often used for session management.
+
+5. Test Results:
+If you've written tests in the "Tests" tab, the results will show here. You can verify if the response meets your expectations (e.g., status code, data values).
+
+Postman also allows you to automate response validation with tests written in JavaScript under the "Tests" tab. For example, you could test if a certain field in the JSON response is correct or if the status code matches expectations.
+By using these features, you can effectively analyze the response to verify the accuracy and performance of your API.

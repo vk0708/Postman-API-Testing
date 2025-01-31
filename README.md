@@ -6,7 +6,8 @@ Postman is an API(application programming interface) development tool that helps
 [POSTMAN introduction](README.md#postman-introduction)
 
 Free APIs for practices:
-https://reqres.in/
+- https://reqres.in/
+- https://fakestoreapi.com/
 
 ## Basics:
 API -> Interface -> Communicate

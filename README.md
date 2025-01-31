@@ -5,7 +5,8 @@ Postman is an API(application programming interface) development tool that helps
 
 [POSTMAN introduction](README.md#postman-introduction)
 
-
+Free APIs for practices:
+https://reqres.in/
 
 ## Basics:
 API -> Interface -> Communicate
@@ -133,3 +134,36 @@ If you've written tests in the "Tests" tab, the results will show here. You can 
 
 Postman also allows you to automate response validation with tests written in JavaScript under the "Tests" tab. For example, you could test if a certain field in the JSON response is correct or if the status code matches expectations.
 By using these features, you can effectively analyze the response to verify the accuracy and performance of your API.
+
+## Params
+1. Path Variables:
+Purpose: Used to pass data as part of the URL path, typically for identifying specific resources (e.g., a particular user, product, etc.).
+
+Example: GET /users/{userId}
+
+Usage in Postman: Path variables are defined in the URL itself, and you can use Postman variables like {{userId}} to make them dynamic.
+
+Example: GET /users/{{userId}}
+
+Example Use Case: Fetch details for a specific user by their userId.
+
+2. Query Parameters:
+Purpose: Used to send additional data as key-value pairs appended to the URL. They are often used for filtering, sorting, or paginating results.
+
+Example:GET /users?status=active&page=2
+Usage in Postman:You can add query parameters in the "Params" section in the Postman interface. They automatically append to the URL.
+
+Example: GET /users?status={{status}}&page={{page}}
+
+Example Use Case: Retrieve a list of users with specific filters like status or pagination like page.
+
+Key Differences:
+
+Location in the URL: 
+- Path variables are part of the URL path (e.g., /users/123).
+- Query parameters are added after the ? in the URL (e.g., /users?status=active).
+
+Usage:
+- Path variables usually represent unique identifiers (e.g., user ID).
+- Query parameters are more for filtering, sorting, or providing optional data.
+These two elements are often used together to build flexible and dynamic API requests.
